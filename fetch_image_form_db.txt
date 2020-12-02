@@ -1,0 +1,57 @@
+<?php
+include "config.php";
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+<table class="table">
+<thead>
+            <td>ID</td>
+            <td>name</td>
+            <td>Age</td>
+            <td>sex</td>
+            <td>place</td>
+
+            <td>phone</td>
+            <td>department</td>
+            <td>image</td>
+
+            </thead>
+<?php
+    
+        $sql="SELECT * FROM student_table";
+        $qry=mysqli_query($conn,$sql);
+       
+        while($row=mysqli_fetch_array($qry)){  ?>
+            <!-- echo "name:".$row['name'];
+            echo  "<img src='". $row['image']."'  >"; -->
+          
+           <tr>
+           <td><?php echo $row['id']?></td>
+           <td><?php echo $row['name']?></td>
+           <td><?php echo $row['age']?></td>
+           <td><?php echo $row['sex']?></td>
+           <td><?php echo $row['place']?></td>
+           <td><?php echo $row['phno']?></td>
+           <td><?php echo $row['department']?></td>
+           <td><img src="imagesuploadedf/<?php echo $row['image'] ;?>" alt="from database" srcset=""></td>
+           </tr> 
+             </table>
+    <?php } ?>
+       
+
+</body>
+
+</html>
+
+

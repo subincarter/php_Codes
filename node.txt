@@ -1,0 +1,13 @@
+step 1  = npm init  					-to start the project
+step 2  = npm install express --save  			-it is used for sever routing 
+step 3	= require installed module and use its functions 
+
+step 4 = app.use(express.static('public'));     congiguration for static files, place the static files inside the public folder 
+
+step 5 = using view engine to display the html pages (ejs package)
+	npm install ejs --save
+
+step 6 = create a folder called  views and place the html files inside it. use,  app.set('view engine','ejs')
+										app.send('/',(req,res)=>{
+											res.render('home');
+										});
